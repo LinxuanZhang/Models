@@ -8,7 +8,7 @@ Computer Vision - CNN
 |------------------|------|-------------|------------------------------------------|
 |:white_check_mark:| 2014 |[VGG](https://arxiv.org/pdf/1409.1556.pdf)    |Deeper CNN with 3*3 filters               |
 |                  | 2014 |[GoogleNet](https://arxiv.org/pdf/1409.4842.pdf)    |Deeper CNN with Inception architecture    |
-|:white_check_mark:| 2015 |[ResNet ](https://arxiv.org/pdf/1512.03385.pdf)      |Residual learning framework               |
+|:white_check_mark:| 2015 |[ResNet](https://arxiv.org/pdf/1512.03385.pdf)      |Residual learning framework               |
 |                  | 2017 |[MobileNet](https://arxiv.org/pdf/1704.04861.pdf)    |     |
 |                  | 2019 |[EfficientNet](https://arxiv.org/pdf/1905.11946.pdf) |Scale to deeper, wider, and higher resolution model              |
 |                  | 2019 |[MoCo](https://arxiv.org/pdf/1911.05722.pdf)         |     |
@@ -46,4 +46,4 @@ NLP - Transformer
 -----------------
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
-|                  | 2017 |[Transformer](https://arxiv.org/pdf/1706.03762.pdf)|            |
+|                  | 2017 |[Transformer](https://arxiv.org/pdf/1706.03762.pdf)|Attention is all you need: the 4th architecture after MLP, CNN, and RNN|

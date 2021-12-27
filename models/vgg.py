@@ -3,9 +3,6 @@ VGG
 https://arxiv.org/pdf/1409.1556v6.pdf
 '''
 import tensorflow as tf
-from tf.keras import Model
-from tf.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout
-
 
 block_args = {
     'A':[(64, 3, 1), (128, 3, 1), (256, 3, 2), (512, 3, 2), (512, 3, 2)],
@@ -16,7 +13,7 @@ block_args = {
 }
 
 
-class vgg_blocks(Model):
+class vgg_blocks(tf.keras.Model):
     def __init__(self, filters, kernel_sizes, repetitions, pool_size = 2, strides = 2):
         '''
         kernel_sizes need to be either integer or list of integer
@@ -28,12 +25,12 @@ class vgg_blocks(Model):
 
         if isinstance(kernel_sizes, list):
             for i in range(repetitions):
-                vars(self)[f'block_{i}'] = Conv2D(filters, kernel_sizes[i], activation='relu', padding='same')
+                vars(self)[f'block_{i}'] = tf.keras.layers.Conv2D(filters, kernel_sizes[i], activation='relu', padding='same')
         elif isinstance(kernel_sizes, int):
             for i in range(repetitions):
-                vars(self)[f'block_{i}'] = Conv2D(filters, kernel_sizes, activation='relu', padding='same')
+                vars(self)[f'block_{i}'] = tf.keras.layers.Conv2D(filters, kernel_sizes, activation='relu', padding='same')
 
-        self.max_pool = MaxPooling2D(pool_size=(pool_size, pool_size), strides=(strides, strides))
+        self.max_pool = tf.keras.layers.MaxPooling2D(pool_size=(pool_size, pool_size), strides=(strides, strides))
 
     def call(self, input):
         x = self.block_0(input)
@@ -45,7 +42,7 @@ class vgg_blocks(Model):
         return x
 
 
-class vgg_feature(Model):
+class vgg_feature(tf.keras.Model):
     def __init__(self, block_arg):
         super().__init__()
             self.block_0 = vgg_blocks(block_arg[0])
@@ -63,31 +60,31 @@ class vgg_feature(Model):
         return x
 
 
-class VGG(Model):
-    def __init__(self, block_arg, num_classes=1000, dropout_ratio=0.5):
+class VGG(tf.keras.Model):
+    def __init__(self, block_arg, num_classes=1000, tf.keras.layers.Dropout_ratio=0.5):
         super().__init__()
         self.feature = vgg_feature(block_arg)
-        self.flatten = Flatten()
-        self.fc1 = Dense(4096, activation='relu')
-        self.fc2 = Dense(4096, activation='relu')
-        self.dropout_1 = Dropout(dropout_ratio)
-        self.dropout_2 = Dropout(dropout_ratio)
-        self.classifier = Dense(num_classes, activation='softmax')
+        self.tf.keras.layers.Flatten = tf.keras.layers.Flatten()
+        self.fc1 = tf.keras.layers.Dense(4096, activation='relu')
+        self.fc2 = tf.keras.layers.Dense(4096, activation='relu')
+        self.tf.keras.layers.Dropout_1 = tf.keras.layers.Dropout(tf.keras.layers.Dropout_ratio)
+        self.tf.keras.layers.Dropout_2 = tf.keras.layers.Dropout(tf.keras.layers.Dropout_ratio)
+        self.classifier = tf.keras.layers.Dense(num_classes, activation='softmax')
 
     def call(self, input):
         x = self.feature(input)
-        x = self.flatten(x)
+        x = self.tf.keras.layers.Flatten(x)
         x = self.fc1(x)
-        x = self.dropout_1(x)
+        x = self.tf.keras.layers.Dropout_1(x)
         x = self.fc2(x)
-        x = self.dropout_2(x)
+        x = self.tf.keras.layers.Dropout_2(x)
         x = self.classifier(x)
     return x
 
 
 def _vgg(block_arg, **kwargs):
-    model = VGG(block_arg, **kwargs)
-    return model
+    tf.keras.Model = VGG(block_arg, **kwargs)
+    return tf.keras.Model
 
 
 def vgg11(**kwargs):

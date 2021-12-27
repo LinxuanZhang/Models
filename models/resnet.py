@@ -3,8 +3,8 @@ ResNet
 https://arxiv.org/pdf/1512.03385v1.pdf
 '''
 import tensorflow as tf
-from tf.keras import Model
-from tf.keras.layers import Conv2D, MaxPooling2D, GlobalAveragePooling2D, Dense, Add, BatchNormalization, Activation
+from tf.keras import tf.keras.Model
+from tf.keras.layers import tf.keras.layers.Dense, tf.keras.layers.Add, tf.keras.layers.BatchNormalization, tf.keras.layers.Activation
 
 block_args = {
     '18':[('bb', 64, 2), ('bb', 128, 2), ('bb', 256, 2), ('bb', 512, 2)],
@@ -14,18 +14,18 @@ block_args = {
     '152':[('bn', [64, 64, 25], 3), ('bn', [128, 128, 512], 4), ('bn', [256, 256, 1024], 36), ('bn', [512, 512, 2048], 3)]
 }
 
-class basic_blocks(Model):
+class basic_blocks(tf.keras.Model):
     def __init__(self, filter):
         '''
         filter:int
         '''
         super().__init__()
-        self.conv_1 = Conv2D(filter, 3, padding='same')
-        self.bn_1 = BatchNormalization()
-        self.conv_2 = Conv2D(filter, 3, padding='same')
-        self.bn_2 = BatchNormalization()
-        self.activation = Activation('relu')
-        self.add = Add()
+        self.conv_1 = tf.keras.layers.Conv2D(filter, 3, ptf.keras.layers.Adding='same')
+        self.bn_1 = tf.keras.layers.BatchNormalization()
+        self.conv_2 = tf.keras.layers.Conv2D(filter, 3, ptf.keras.layers.Adding='same')
+        self.bn_2 = tf.keras.layers.BatchNormalization()
+        self.tf.keras.layers.Activation = tf.keras.layers.Activation('relu')
+        self.add = tf.keras.layers.Add()
 
     def call(self, input):
         x = self.conv_1(input)
@@ -38,20 +38,20 @@ class basic_blocks(Model):
         return x
 
 
-class bottleneck(Model):
+class bottleneck(tf.keras.Model):
     def __init__(self, filters):
         '''
         filters: list of 3 int
         '''
         super().__init__()
-        self.conv_1 = Conv2D(filters[0], 1, padding='same')
-        self.bn_1 = BatchNormalization()
-        self.conv_2 = Conv2D(filters[1], 3, padding='same')
-        self.bn_2 = BatchNormalization()
-        self.conv_3 = Conv2D(filters[2], 1, padding='same')
-        self.bn_3 = BatchNormalization()
-        self.activation = Activation('relu')
-        self.add = Add()
+        self.conv_1 = tf.keras.layers.Conv2D(filters[0], 1, ptf.keras.layers.Adding='same')
+        self.bn_1 = tf.keras.layers.BatchNormalization()
+        self.conv_2 = tf.keras.layers.Conv2D(filters[1], 3, ptf.keras.layers.Adding='same')
+        self.bn_2 = tf.keras.layers.BatchNormalization()
+        self.conv_3 = tf.keras.layers.Conv2D(filters[2], 1, ptf.keras.layers.Adding='same')
+        self.bn_3 = tf.keras.layers.BatchNormalization()
+        self.tf.keras.layers.Activation = tf.keras.layers.Activation('relu')
+        self.tf.keras.layers.Add = tf.keras.layers.Add()
 
     def call(self, input):
         x = self.conv_1(input)
@@ -67,7 +67,7 @@ class bottleneck(Model):
         return x
 
 
-class identity_blocks(Model):
+class identity_blocks(tf.keras.Model):
     def __init__(self, block_arg):
         super().__init__()
         self.repetitions = block_arg[2]
@@ -87,21 +87,21 @@ class identity_blocks(Model):
         return x
 
 
-class ResNet(Model):
+class ResNet(tf.keras.Model):
     def __init__(self, block_arg, num_classes=1000):
         super().__init__()
-        self.conv = Conv2D(64, 7, padding='same')
-        self.bn = BatchNormalization()
-        self.activation = Activation('relu')
-        self.max_pool = MaxPooling2D((3, 3))
+        self.conv = tf.keras.layers.Conv2D(64, 7, ptf.keras.layers.Adding='same')
+        self.bn = tf.keras.layers.BatchNormalization()
+        self.tf.keras.layers.Activation = tf.keras.layers.Activation('relu')
+        self.max_pool = tf.keras.layers.MaxPooling2D((3, 3))
 
         self.id_block1 = identity_blocks[block_arg[0]]
         self.id_block2 = identity_blocks[block_arg[1]]
         self.id_block3 = identity_blocks[block_arg[2]]
         self.id_block4 = identity_blocks[block_arg[3]]
 
-        self.global_pool = GlobalAveragePooling2D()
-        self.classifier = Dense(num_classes, activation='softmax')
+        self.global_pool = tf.keras.layers.GlobalAveragePooling2D()
+        self.classifier = tf.keras.layers.Dense(num_classes, tf.keras.layers.Activation='softmax')
 
     def call(self, input):
         x = self.conv(input)
@@ -118,8 +118,8 @@ class ResNet(Model):
 
 
 def _resnet(block_arg, **kwargs):
-    model = ResNet(block_arg, **kwargs)
-    return model
+    tf.keras.Model = ResNet(block_arg, **kwargs)
+    return tf.keras.Model
 
 
 def resnet18(**kwargs):
