@@ -2,7 +2,7 @@
 Trying to implement and replicate ML deep learning models
 
 Computer Vision - CNN
-=====================
+---------------------
 
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
@@ -15,14 +15,14 @@ Computer Vision - CNN
 
 
 Computer Vision - Transformer
-=============================
+-----------------------------
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
 |                  | 2020 |[ViT](https://arxiv.org/pdf/2010.11929.pdf)    |      |
 |                  | 2021 |[MAE](https://arxiv.org/pdf/2111.06377.pdf)    |      |
 
 Computer Vision - GAN
-=====================
+---------------------
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
 |                  | 2014 |[GAN](https://papers.nips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf)|            |
@@ -31,7 +31,7 @@ Computer Vision - GAN
 |                  | 2015 |[StyleGAN](https://arxiv.org/abs/1812.04948)    |      |
 
 Computer Vision - Object Detection
-==================================
+----------------------------------
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
 |                  | 2014 |[R-CNN](https://arxiv.org/pdf/1311.2524v5.pdf)|            |
@@ -43,7 +43,7 @@ Computer Vision - Object Detection
 
 
 NLP - Transformer
-=================
+-----------------
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
 |                  | 2017 |[Transformer](https://arxiv.org/pdf/1706.03762.pdf)|            |
