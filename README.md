@@ -19,7 +19,7 @@ Computer Vision - Transformer
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
 |                  | 2020 |[ViT](https://arxiv.org/pdf/2010.11929.pdf)    |      |
-|                  | 2021 |[MAE](https://arxiv.org/pdf/2111.06377.pdf)    |      |
+
 
 Computer Vision - GAN
 ---------------------
@@ -46,4 +46,4 @@ NLP - Transformer
 -----------------
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
-|                  | 2017 |[Transformer](https://arxiv.org/pdf/1706.03762.pdf)|Attention is all you need: the 4th architecture after MLP, CNN, and RNN|
+|:white_check_mark:| 2017 |[Transformer](https://arxiv.org/pdf/1706.03762.pdf)|Attention is all you need: the 4th architecture after MLP, CNN, and RNN|

@@ -3,8 +3,6 @@ ResNet
 https://arxiv.org/pdf/1512.03385v1.pdf
 '''
 import tensorflow as tf
-from tf.keras import tf.keras.Model
-from tf.keras.layers import tf.keras.layers.Dense, tf.keras.layers.Add, tf.keras.layers.BatchNormalization, tf.keras.layers.Activation
 
 block_args = {
     '18':[('bb', 64, 2), ('bb', 128, 2), ('bb', 256, 2), ('bb', 512, 2)],
