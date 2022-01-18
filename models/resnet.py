@@ -22,7 +22,7 @@ class basic_blocks(tf.keras.Model):
         self.bn_1 = tf.keras.layers.BatchNormalization()
         self.conv_2 = tf.keras.layers.Conv2D(filter, 3, ptf.keras.layers.Adding='same')
         self.bn_2 = tf.keras.layers.BatchNormalization()
-        self.tf.keras.layers.Activation = tf.keras.layers.Activation('relu')
+        self.activation = tf.keras.layers.Activation('relu')
         self.add = tf.keras.layers.Add()
 
     def call(self, input):
@@ -48,8 +48,8 @@ class bottleneck(tf.keras.Model):
         self.bn_2 = tf.keras.layers.BatchNormalization()
         self.conv_3 = tf.keras.layers.Conv2D(filters[2], 1, ptf.keras.layers.Adding='same')
         self.bn_3 = tf.keras.layers.BatchNormalization()
-        self.tf.keras.layers.Activation = tf.keras.layers.Activation('relu')
-        self.tf.keras.layers.Add = tf.keras.layers.Add()
+        self.activation = tf.keras.layers.Activation('relu')
+        self.add = tf.keras.layers.Add()
 
     def call(self, input):
         x = self.conv_1(input)
@@ -90,13 +90,13 @@ class ResNet(tf.keras.Model):
         super().__init__()
         self.conv = tf.keras.layers.Conv2D(64, 7, ptf.keras.layers.Adding='same')
         self.bn = tf.keras.layers.BatchNormalization()
-        self.tf.keras.layers.Activation = tf.keras.layers.Activation('relu')
+        self.activation = tf.keras.layers.Activation('relu')
         self.max_pool = tf.keras.layers.MaxPooling2D((3, 3))
 
-        self.id_block1 = identity_blocks[block_arg[0]]
-        self.id_block2 = identity_blocks[block_arg[1]]
-        self.id_block3 = identity_blocks[block_arg[2]]
-        self.id_block4 = identity_blocks[block_arg[3]]
+        self.id_block1 = identity_blocks(block_arg[0])
+        self.id_block2 = identity_blocks(block_arg[1])
+        self.id_block3 = identity_blocks(block_arg[2])
+        self.id_block4 = identity_blocks(block_arg[3])
 
         self.global_pool = tf.keras.layers.GlobalAveragePooling2D()
         self.classifier = tf.keras.layers.Dense(num_classes, tf.keras.layers.Activation='softmax')

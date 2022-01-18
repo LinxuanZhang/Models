@@ -64,20 +64,20 @@ class VGG(tf.keras.Model):
     def __init__(self, block_arg, num_classes=1000, tf.keras.layers.Dropout_ratio=0.5):
         super().__init__()
         self.feature = vgg_feature(block_arg)
-        self.tf.keras.layers.Flatten = tf.keras.layers.Flatten()
+        self.Flatten = tf.keras.layers.Flatten()
         self.fc1 = tf.keras.layers.Dense(4096, activation='relu')
         self.fc2 = tf.keras.layers.Dense(4096, activation='relu')
-        self.tf.keras.layers.Dropout_1 = tf.keras.layers.Dropout(tf.keras.layers.Dropout_ratio)
-        self.tf.keras.layers.Dropout_2 = tf.keras.layers.Dropout(tf.keras.layers.Dropout_ratio)
+        self.Dropout_1 = tf.keras.layers.Dropout(tf.keras.layers.Dropout_ratio)
+        self.Dropout_2 = tf.keras.layers.Dropout(tf.keras.layers.Dropout_ratio)
         self.classifier = tf.keras.layers.Dense(num_classes, activation='softmax')
 
     def call(self, input):
         x = self.feature(input)
-        x = self.tf.keras.layers.Flatten(x)
+        x = self.Flatten(x)
         x = self.fc1(x)
-        x = self.tf.keras.layers.Dropout_1(x)
+        x = self.Dropout_1(x)
         x = self.fc2(x)
-        x = self.tf.keras.layers.Dropout_2(x)
+        x = self.Dropout_2(x)
         x = self.classifier(x)
     return x
 

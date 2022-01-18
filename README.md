@@ -9,7 +9,8 @@ Computer Vision - CNN
 |:white_check_mark:| 2014 |[VGG](https://arxiv.org/pdf/1409.1556.pdf)    |Deeper CNN with 3*3 filters               |
 |                  | 2014 |[GoogleNet](https://arxiv.org/pdf/1409.4842.pdf)    |Deeper CNN with Inception architecture    |
 |:white_check_mark:| 2015 |[ResNet](https://arxiv.org/pdf/1512.03385.pdf)      |Residual learning framework               |
-|                  | 2017 |[MobileNet](https://arxiv.org/pdf/1704.04861.pdf)    |     |
+|:white_check_mark:| 2017 |[MobileNet V1](https://arxiv.org/pdf/1704.04861.pdf)    |Replace regular CNN with depth-wise convolution and point-wise convolution |
+|                  | 2018 |[MobileNet V2](https://arxiv.org/pdf/1704.04861.pdf)    |Inverted Residuals and Linear Bottlenecks |
 |                  | 2019 |[EfficientNet](https://arxiv.org/pdf/1905.11946.pdf) |Scale to deeper, wider, and higher resolution model              |
 |                  | 2019 |[MoCo](https://arxiv.org/pdf/1911.05722.pdf)         |     |
 
@@ -18,7 +19,7 @@ Computer Vision - Transformer
 -----------------------------
 |     Finished     | Year |    Model    |               Description                |
 |------------------|------|-------------|------------------------------------------|
-|                  | 2020 |[ViT](https://arxiv.org/pdf/2010.11929.pdf)    |      |
+|:frog:| 2020 |[ViT](https://arxiv.org/pdf/2010.11929.pdf)    |Apply transformer in vision with minimal changes |
 
 
 Computer Vision - GAN
