@@ -83,8 +83,8 @@ class VGG(tf.keras.Model):
 
 
 def _vgg(block_arg, **kwargs):
-    tf.keras.Model = VGG(block_arg, **kwargs)
-    return tf.keras.Model
+    Model = VGG(block_arg, **kwargs)
+    return Model
 
 
 def vgg11(**kwargs):

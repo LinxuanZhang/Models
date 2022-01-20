@@ -116,8 +116,8 @@ class ResNet(tf.keras.Model):
 
 
 def _resnet(block_arg, **kwargs):
-    tf.keras.Model = ResNet(block_arg, **kwargs)
-    return tf.keras.Model
+    Model = ResNet(block_arg, **kwargs)
+    return Model
 
 
 def resnet18(**kwargs):
