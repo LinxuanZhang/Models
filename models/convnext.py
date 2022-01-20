@@ -29,6 +29,7 @@ class convnext_block(tf.keras.Model):
         x = self.layernorm(x)
         x = self.pointwise_linear1(x)
         x = self.activation(x)
+        x = self.pointwise_linear2(x)
         if self.gamma is not None:
             x = self.gamma * x
         x = tf.transpose(x, [0, 3, 2, 1])
